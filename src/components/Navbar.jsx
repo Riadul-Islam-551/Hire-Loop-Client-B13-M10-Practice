@@ -2,8 +2,9 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, Drawer } from "@heroui/react";
+import { Button, Drawer, Separator } from "@heroui/react";
 import { Bars } from "@gravity-ui/icons";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 const Navbar = () => {
   const links = (
@@ -20,7 +21,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="w-full shadow-sm">
+    <div className="w-full shadow-sm shadow-gray-200 dark:shadow-gray-800">
       <div className="container mx-auto  flex items-center justify-between p-4">
         <div className="flex items-center w-25 h-7.5 ">
           <Link href="/">
@@ -34,9 +35,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex items-center gap-4">
-          <div className="hidden lg:block">
+          <div className="hidden lg:block mr-4">
             <ul className="flex items-center gap-4">{links}</ul>
           </div>
+          <Separator orientation="vertical" className=" hidden lg:block" />
           <div className="flex gap-2">
             <Button variant="ghost">Sign in</Button>
             <Button variant="outline">Get Started</Button>
@@ -58,6 +60,9 @@ const Navbar = () => {
                 </Drawer.Content>
               </Drawer.Backdrop>
             </Drawer>
+          </div>
+          <div>
+            <ThemeToggleButton />
           </div>
         </div>
       </div>
