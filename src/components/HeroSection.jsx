@@ -1,5 +1,6 @@
 import { Magnifier, Briefcase, ChartColumn, Star } from "@gravity-ui/icons";
 import { Button, Card, Input } from "@heroui/react";
+import Image from "next/image";
 
 const stats = [
   {
@@ -94,13 +95,13 @@ const HeroSection = () => {
                 className="border border-white/50 bg-black/20 dark:bg-white/5 backdrop-blur-xl"
               >
                 <Card.Description className="p-6 text-gray-200 ">
-                  <div className="mb-10 ">{item.icon}</div>
+                  <span >{item.icon}</span>
 
-                  <h3 className="text-4xl font-bold lg:text-5xl">
+                  <span className="text-4xl font-bold lg:text-5xl mt-6 md:mt-8 lg:mt-10">
                     {item.value}
-                  </h3>
+                  </span>
 
-                  <p className="mt-3 text-sm ">{item.label}</p>
+                  <span className="mt-3 text-sm ">{item.label}</span>
                 </Card.Description>
               </Card>
             ))}
