@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex items-center w-25 h-7.5 ">
           <a href="/">
             <Image
-              src={'/assets/logo.png'}
+              src={"/assets/logo.png"}
               alt="Logo"
               height={200}
               width={200}
@@ -28,7 +28,9 @@ const Navbar = () => {
           </div>
           <Separator orientation="vertical" className=" hidden lg:block" />
           <div className="flex items-center lg:mr-4">
-            <Button variant="ghost">Sign in</Button>
+            <Link href="/signin">
+              <Button variant="ghost">Sign in</Button>
+            </Link>
             <Button variant="outline">Get Started</Button>
           </div>
           <div>
