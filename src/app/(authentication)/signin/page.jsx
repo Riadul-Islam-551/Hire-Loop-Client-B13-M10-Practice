@@ -39,7 +39,7 @@ const SignInPage = () => {
 
     // console.log({ data, error });
 
-    console.log(user);
+    // console.log(user);
   };
 
   //   const handleGoogleSignin = async () => {
