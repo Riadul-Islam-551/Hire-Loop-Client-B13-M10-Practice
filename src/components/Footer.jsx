@@ -1,152 +1,145 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LogoFacebook, LogoLinkedin, LogoTelegram } from "@gravity-ui/icons";
 
-// import Logo from "/assets/logo.png";
-
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-400 border-t border-gray-700">
-      <div className="container mx-auto px-6 py-14">
-        {/* Top Section */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 ">
-          {/* Logo & Description */}
-          <div className="space-y-6 col-span-2 md:col-span-3 lg:col-span-2 ">
-            <Link href="/" className="inline-block">
+    <footer className="relative bg-linear-to-b from-zinc-950 to-black text-zinc-400 border-t border-zinc-900 overflow-hidden">
+      {/* Decorative Ambient Radial Gradient Glow */}
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-600/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 pt-16 pb-12">
+        {/* Top Grid Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-12">
+          {/* Logo & Platform Description */}
+          <div className="col-span-2 space-y-5 lg:pr-8">
+            <Link
+              href="/"
+              className="inline-block group transition-transform duration-300 hover:scale-[1.02]"
+            >
               <Image
-                src={'/assets/logo.png'}
-                alt="Programming Hero"
-                width={180}
-                height={60}
-                className="object-contain"
+                src="/assets/logo.png"
+                alt="HireLoop Logo"
+                width={160}
+                height={50}
+                className="object-contain brightness-110"
               />
             </Link>
 
-            <p className="max-w-xs text-sm leading-7 text-gray-500">
-              The AI-native career platform. Built for people who take their
-              work seriously.
+            <p className="max-w-xs text-sm leading-relaxed text-zinc-500">
+              The AI-native career platform. Built for ambitious professionals
+              who take their work and future seriously.
             </p>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-4">
+            {/* Social Icons Container */}
+            <div className="flex items-center gap-3 pt-2">
               <Link
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-900 hover:bg-violet-600 transition"
+                aria-label="Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-violet-600 hover:border-violet-500 hover:scale-110 hover:shadow-lg hover:shadow-violet-600/20 transition-all duration-300"
               >
-                <LogoFacebook className="w-5 h-5 text-white" />
+                <LogoFacebook className="w-5 h-5" />
               </Link>
 
               <Link
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-600 hover:bg-violet-700 transition"
+                aria-label="Telegram"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-violet-600 hover:border-violet-500 hover:scale-110 hover:shadow-lg hover:shadow-violet-600/20 transition-all duration-300"
               >
-                <LogoTelegram className="w-5 h-5 text-white" />
+                <LogoTelegram className="w-5 h-5" />
               </Link>
 
               <Link
                 href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-900 hover:bg-violet-600 transition"
+                aria-label="LinkedIn"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-violet-600 hover:border-violet-500 hover:scale-110 hover:shadow-lg hover:shadow-violet-600/20 transition-all duration-300"
               >
-                <LogoLinkedin className="w-5 h-5 text-white" />
+                <LogoLinkedin className="w-5 h-5" />
               </Link>
             </div>
           </div>
 
-          {/* Product */} 
-          <div className=" col-span-2 md:col-span-1">
-            <h3 className="mb-5 text-sm font-semibold text-violet-500">
+          {/* Column 1: Product Links */}
+          <div className="col-span-1">
+            <h3 className="mb-5 text-xs font-bold tracking-widest uppercase text-violet-400">
               Product
             </h3>
-
-            <ul className="space-y-2  text-sm">
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Job discovery
-                </Link>
-              </li>
-
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Worker AI
-                </Link>
-              </li>
-
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Companies
-                </Link>
-              </li>
-
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Salary data
-                </Link>
-              </li>
+            <ul className="space-y-3 text-sm">
+              {["Job discovery", "Worker AI", "Companies", "Salary data"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      href="#"
+                      className="inline-block hover:text-zinc-100 transform hover:translate-x-1 transition-all duration-300 ease-out font-medium text-zinc-500"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
-          {/* Navigations */}
-          <div className="space-y-6 col-span-2 md:col-span-1">
-            <h3 className="mb-5 text-sm font-semibold text-violet-500">
+          {/* Column 2: Navigation Links */}
+          <div className="col-span-1">
+            <h3 className="mb-5 text-xs font-bold tracking-widest uppercase text-violet-400">
               Navigations
             </h3>
-
-            <ul className="space-y-2  text-sm">
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Help center
-                </Link>
-              </li>
-
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Career library
-                </Link>
-              </li>
-
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Contact
-                </Link>
-              </li>
+            <ul className="space-y-3 text-sm">
+              {["Help center", "Career library", "Contact"].map((item) => (
+                <li key={item}>
+                  <Link
+                    href="#"
+                    className="inline-block hover:text-zinc-100 transform hover:translate-x-1 transition-all duration-300 ease-out font-medium text-zinc-500"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Resources */}
-          <div className="space-y-6 col-span-2 md:col-span-1">
-            <h3 className="mb-5 text-sm font-semibold text-violet-500">
+          {/* Column 3: Resources Links */}
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="mb-5 text-xs font-bold tracking-widest uppercase text-violet-400">
               Resources
             </h3>
-
-            <ul className="space-y-2  text-sm">
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Brand Guideline
-                </Link>
-              </li>
-
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Newsroom
-                </Link>
-              </li>
+            <ul className="space-y-3 text-sm">
+              {["Brand Guideline", "Newsroom"].map((item) => (
+                <li key={item}>
+                  <Link
+                    href="#"
+                    className="inline-block hover:text-zinc-100 transform hover:translate-x-1 transition-all duration-300 ease-out font-medium text-zinc-500"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Section */}
-      <div className="mt-14 flex gap-4 border-t border-zinc-800 py-6 items-center justify-between px-2 text-xs ">
-        <p className="text-gray-500">&copy;Copyright 2024 — HireLoop</p>
+        {/* Bottom Copyright & Legal Section */}
+        <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row gap-4 items-center justify-between text-xs text-zinc-600 font-medium">
+          <p>
+            &copy; {new Date().getFullYear()} — HireLoop. All rights reserved.
+          </p>
 
-        <div className="flex items-center gap-2 text-gray-500">
-          <Link href="#" className="hover:text-white transition">
-            Terms & Policy
-          </Link>
-
-          <Link href="#" className="hover:text-white transition">
-            Privacy Guideline
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link
+              href="#"
+              className="hover:text-zinc-400 transition-colors duration-200"
+            >
+              Terms & Policy
+            </Link>
+            <Link
+              href="#"
+              className="hover:text-zinc-400 transition-colors duration-200"
+            >
+              Privacy Guideline
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
