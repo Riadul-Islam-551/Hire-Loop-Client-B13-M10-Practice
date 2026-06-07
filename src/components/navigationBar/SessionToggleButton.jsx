@@ -18,7 +18,7 @@ const SessionToggleButton = () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          router.push("/login"); // redirect to login page
+          window.location.reload(); // redirect to login page
         },
       },
     });
@@ -26,9 +26,7 @@ const SessionToggleButton = () => {
   return (
     <div>
       {isPending === true ? (
-        <>
-          loading....
-        </>
+        <>loading....</>
       ) : user ? (
         <>
           <Button variant="ghost" onClick={signOutUser}>

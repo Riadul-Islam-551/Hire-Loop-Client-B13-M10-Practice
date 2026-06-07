@@ -10,6 +10,8 @@ import {
   Input,
   Label,
   TextField,
+  Radio,
+  RadioGroup,
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
@@ -21,11 +23,14 @@ const RegistrationPage = () => {
     const formData = new FormData(e.currentTarget);
     const user = Object.fromEntries(formData.entries());
 
+    console.log(user);
+
     const { data, error } = await authClient.signUp.email({
       email: user.email,
       password: user.password,
       name: user.name,
       image: user.image,
+      role: user.role,
     });
 
     if (data) {
@@ -136,6 +141,38 @@ const RegistrationPage = () => {
               />
               <FieldError className="text-xs font-medium text-danger mt-1" />
             </TextField>
+
+            {/* account role  */}
+            <div className="flex flex-col gap-4">
+              <Label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+                Subscription plan
+              </Label>
+              <RadioGroup
+                isRequired
+                defaultValue="seeker"
+                name="role"
+                orientation="horizontal"
+              >
+                <Radio value="seeker">
+                  <Radio.Control>
+                    <Radio.Indicator />
+                  </Radio.Control>
+                  <Radio.Content>
+                    <Label>Seeker</Label>
+                    <Description>For apply job</Description>
+                  </Radio.Content>
+                </Radio>
+                <Radio value="recruiter">
+                  <Radio.Control>
+                    <Radio.Indicator />
+                  </Radio.Control>
+                  <Radio.Content>
+                    <Label>Recruiter</Label>
+                    <Description>For hiring seeker</Description>
+                  </Radio.Content>
+                </Radio>
+              </RadioGroup>
+            </div>
 
             {/* Password Field */}
             <TextField
