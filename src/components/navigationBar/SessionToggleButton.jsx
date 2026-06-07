@@ -1,7 +1,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { Button, Spinner } from "@heroui/react";
+import { Button } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
 
@@ -27,7 +27,7 @@ const SessionToggleButton = () => {
     <div>
       {isPending === true ? (
         <>
-          <Spinner/>
+          loading....
         </>
       ) : user ? (
         <>
