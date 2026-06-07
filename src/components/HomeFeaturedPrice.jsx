@@ -2,7 +2,12 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { CircleCheckFill, Flame, HouseFill, ShieldCheck } from "@gravity-ui/icons";
+import {
+  CircleCheckFill,
+  Flame,
+  HouseFill,
+  ShieldCheck,
+} from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
 
 const HomeFeaturedPrice = () => {
