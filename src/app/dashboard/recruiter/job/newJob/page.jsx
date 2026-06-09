@@ -30,18 +30,13 @@ import {
 export default function CreateJobForm() {
   const mockCompanyData = {
     companyName: "Creative IT",
-    companyId: "comp_9081273948123_x",
+    companyId: "abcd_1234",
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data = {};
-
-    // Convert FormData to plain object
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
-    });
+    const data = Object.fromEntries(formData.entries());
 
     data.companyName = mockCompanyData.companyName;
     data.companyId = mockCompanyData.companyId;
