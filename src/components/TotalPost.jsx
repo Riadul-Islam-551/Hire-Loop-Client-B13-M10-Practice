@@ -35,41 +35,39 @@ const TotalPost = () => {
   ];
 
   return (
-    <section className="py-9 w-full">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* 4-Column Step Display Grid */}
-        <div className="grid grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <Card
-              key={index}
-              isHoverable
-              className="border border-default-100 dark:border-default-800 shadow-sm bg-content1/70 backdrop-blur-md z-10"
-            >
-              <Card.Content className="flex flex-col items-start gap-4">
-                {/* Upper Badge Layer Containing Icon and Index Step Indicator */}
-                <div className="w-full flex items-center justify-between">
-                  <div
-                    className={`p-3 rounded-xl ${step.bgColor} flex items-center justify-center`}
-                  >
-                    {step.icon}
-                  </div>
+    <div className="container mx-auto p-4 ">
+      {/* 4-Column Step Display Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {steps.map((step, index) => (
+          <Card
+            key={index}
+            isHoverable
+            className="border border-default-100 dark:border-default-800 shadow-sm bg-content1/70 backdrop-blur-md z-10"
+          >
+            <Card.Content className="flex flex-col items-start gap-2 ">
+              {/* Upper Badge Layer Containing Icon and Index Step Indicator */}
+              <div className="w-full flex items-center justify-between">
+                <div
+                  className={`p-3 rounded-xl ${step.bgColor} flex items-center justify-center`}
+                >
+                  {step.icon}
                 </div>
+              </div>
 
-                {/* Main Content Body */}
-                <div className="mt-2">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-default-500 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </Card.Content>
-            </Card>
-          ))}
-        </div>
+              {/* Main Content Body */}
+              <div className="mt-2">
+                <h3 className="text-sm lg:text-md  font-semibold text-foreground mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-xs  lg:text-sm text-default-500 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </Card.Content>
+          </Card>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
