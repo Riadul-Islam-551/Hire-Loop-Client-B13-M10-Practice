@@ -42,7 +42,6 @@ export function SidebarMenu() {
       <Drawer className="flex-1">
         <Button variant="secondary" className={"lg:hidden"}>
           <LayoutSideContentLeft className="" />
-          menu
         </Button>
         <Drawer.Backdrop>
           <Drawer.Content placement="left">

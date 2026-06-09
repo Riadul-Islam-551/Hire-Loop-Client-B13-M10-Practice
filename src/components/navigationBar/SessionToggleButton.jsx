@@ -12,7 +12,7 @@ const SessionToggleButton = () => {
   } = authClient.useSession();
 
   const user = session?.user;
-  console.log(user, isPending);
+  // console.log(user, isPending);
 
   const signOutUser = async () => {
     await authClient.signOut({
