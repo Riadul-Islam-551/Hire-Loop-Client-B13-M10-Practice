@@ -26,8 +26,14 @@ import {
   Select,
   ListBox,
 } from "@heroui/react";
+import { div } from "motion/react-client";
 
 export default function CreateJobForm() {
+  const mockCompanyData = {
+    companyName: "Creative IT",
+    companyId: "comp_9081273948123_x",
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -38,36 +44,27 @@ export default function CreateJobForm() {
       data[key] = value.toString();
     });
 
+    data.companyName = mockCompanyData.companyName;
+    data.companyId = mockCompanyData.companyId;
+
     console.log("Job Vacancy Submitted Data:", data);
     alert(
       `Vacancy created successfully with:\n ${JSON.stringify(data, null, 2)}`,
     );
   };
 
-  // Mock array data for Hero UI Select Components
-  //   const categories = [
-  //     { key: "software-development", label: "Software Development" },
-  //     { key: "design-creative", label: "Design & Creative" },
-  //     { key: "marketing-sales", label: "Marketing & Sales" },
-  //     { key: "product-management", label: "Product Management" },
-  //     { key: "data-science", label: "Data Science & Analytics" },
-  //   ];
-
-  //   const jobTypes = [
-  //     { key: "full-time", label: "Full-time" },
-  //     { key: "part-time", label: "Part-time" },
-  //     { key: "contract", label: "Contractual" },
-  //     { key: "internship", label: "Internship" },
-  //     { key: "remote", label: "Remote / WFH" },
-  //   ];
 
   return (
-    <div className="max-w-4xl mx-auto my-12 p-6 sm:p-8 bg-content1 border border-default-100 dark:border-default-800 rounded-2xl shadow-sm">
+    <div className="w-full p-3 ">
+        <div className="max-w-4xl mx-auto my-12 p-6 sm:p-8 bg-content1 border border-default-100 dark:border-default-800 rounded-2xl shadow-sm">
       {/* Form Header */}
       <div className="mb-8 pb-6 border-b border-default-100 dark:border-default-800">
         <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
           <Briefcase className="text-primary w-6 h-6" /> Create Job Vacancy
         </h2>
+        <p className="border border-blue-400 rounded-xl p-2 my-2 ">
+          For {mockCompanyData.comp}
+        </p>
         <p className="text-sm text-default-500 mt-1">
           Fill out the details below to dispatch a professional circular onto
           the HireLoop feed.
@@ -374,6 +371,7 @@ export default function CreateJobForm() {
           </Button>
         </div>
       </Form>
+    </div>
     </div>
   );
 }
