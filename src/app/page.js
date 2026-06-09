@@ -3,7 +3,6 @@ import HomeFeaturedPrice from "@/components/home/HomeFeaturedPrice";
 import HomeFeatures from "@/components/home/HomeFeatures";
 import HomeJobSection from "@/components/home/HomeJobSection";
 import HomeSplitAction from "@/components/home/HomeSplitAction";
-import Image from "next/image";
 
 export default function Home() {
   return (
