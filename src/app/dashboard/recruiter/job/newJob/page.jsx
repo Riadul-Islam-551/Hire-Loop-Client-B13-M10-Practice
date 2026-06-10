@@ -136,7 +136,7 @@ export default function CreateJobForm() {
                   <Layers className="w-4 h-4 text-default-400 mr-1" />
                 }
               >
-                <Select.Trigger className="min-h-[40px] bg-default-100 hover:bg-default-200/70 dark:bg-default-800/50 dark:hover:bg-default-700/50 border border-transparent rounded-xl transition-all duration-200">
+                <Select.Trigger className="min-h-10 bg-default-100 hover:bg-default-200/70 dark:bg-default-800/50 dark:hover:bg-default-700/50 border border-transparent rounded-xl transition-all duration-200">
                   <Select.Value className="text-sm" />
                   <Select.Indicator />
                 </Select.Trigger>
@@ -202,7 +202,7 @@ export default function CreateJobForm() {
                   <Thunderbolt className="w-4 h-4 text-default-400 mr-1" />
                 }
               >
-                <Select.Trigger className="min-h-[40px] bg-default-100 hover:bg-default-200/70 dark:bg-default-800/50 dark:hover:bg-default-700/50 border border-transparent rounded-xl transition-all duration-200">
+                <Select.Trigger className="min-h-10 bg-default-100 hover:bg-default-200/70 dark:bg-default-800/50 dark:hover:bg-default-700/50 border border-transparent rounded-xl transition-all duration-200">
                   <Select.Value className="text-sm" />
                   <Select.Indicator />
                 </Select.Trigger>
@@ -348,7 +348,7 @@ export default function CreateJobForm() {
               <Text className="absolute left-4 top-3.5 w-4 h-4 text-default-400 z-10 pointer-events-none" />
               <Input
                 placeholder="Provide a high-level summary overview of this vacancy role..."
-                className="w-full pl-7 min-h-[90px] pt-1 items-start"
+                className="w-full pl-7 min-h-22.5 pt-1 items-start"
               />
             </div>
             <FieldError className="text-xs text-danger font-medium mt-1.5" />
@@ -372,7 +372,7 @@ export default function CreateJobForm() {
               <Bulb className="absolute left-4 top-3.5 w-4 h-4 text-default-400 z-10 pointer-events-none" />
               <Input
                 placeholder="e.g. Maintain APIs, Lead design scrums, Monitor server performance"
-                className="w-full pl-7 min-h-[80px] pt-1 items-start"
+                className="w-full pl-7 min-h-20 pt-1 items-start"
               />
             </div>
             <Description className="text-xs text-default-400 dark:text-default-500 mt-2 flex items-center gap-1.5 px-1">
@@ -400,7 +400,7 @@ export default function CreateJobForm() {
               <ShieldCheck className="absolute left-4 top-3.5 w-4 h-4 text-default-400 z-10 pointer-events-none" />
               <Input
                 placeholder="e.g. 3+ years experience in Next.js, Node.js, MongoDB database experience"
-                className="w-full pl-7 min-h-[80px] pt-1 items-start"
+                className="w-full pl-7 min-h-20 pt-1 items-start"
               />
             </div>
             <FieldError className="text-xs text-danger font-medium mt-1.5" />
@@ -415,7 +415,7 @@ export default function CreateJobForm() {
               <Heart className="absolute left-4 top-3.5 w-4 h-4 text-default-400 z-10 pointer-events-none" />
               <Input
                 placeholder="e.g. Health insurance, Unlimited PTO, Annual performance bonus equity"
-                className="w-full pl-7 min-h-[80px] pt-1 items-start"
+                className="w-full pl-7 min-h-20 pt-1 items-start"
               />
             </div>
             <Description className="text-xs text-default-400 dark:text-default-500 mt-2 flex items-center gap-1.5 px-1">
