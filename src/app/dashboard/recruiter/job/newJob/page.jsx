@@ -27,7 +27,7 @@ import {
   ListBox,
   toast,
 } from "@heroui/react";
-import { createJob } from "@/lib/action";
+import { createJob } from "@/lib/actions/jobs";
 import { redirect } from "next/navigation";
 
 export default function CreateJobForm() {
