@@ -129,6 +129,7 @@ export default function CreateJobForm() {
                 Job Category
               </Label>
               <Select
+                name="jobCategory"
                 className="w-full"
                 placeholder="Select professional category"
                 startContent={
@@ -194,6 +195,7 @@ export default function CreateJobForm() {
                 Job Type
               </Label>
               <Select
+                name="jobType"
                 className="w-full"
                 placeholder="Select commitment type"
                 startContent={
