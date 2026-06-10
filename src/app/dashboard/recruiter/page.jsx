@@ -8,12 +8,11 @@ const RecruiterDashboardPage = () => {
   // get the user session
   const {
     data: session,
-    isPending, //loading state
-    error,
+    isPending, 
   } = authClient.useSession();
 
   const user = session?.user;
-  console.log(user);
+  // console.log(user);
 
   return (
     <>

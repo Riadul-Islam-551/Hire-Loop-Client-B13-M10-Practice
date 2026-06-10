@@ -25,7 +25,10 @@ import {
   Button,
   Select,
   ListBox,
+  toast,
 } from "@heroui/react";
+import { createJob } from "@/lib/action";
+import { redirect } from "next/navigation";
 
 export default function CreateJobForm() {
   const mockCompanyData = {
@@ -33,7 +36,7 @@ export default function CreateJobForm() {
     companyId: "abcd_1234",
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
@@ -41,10 +44,19 @@ export default function CreateJobForm() {
     data.companyName = mockCompanyData.companyName;
     data.companyId = mockCompanyData.companyId;
 
-    console.log("Job Vacancy Submitted Data:", data);
-    alert(
-      `Vacancy created successfully with:\n ${JSON.stringify(data, null, 2)}`,
-    );
+    // console.log("Job Vacancy Submitted Data:", data);
+    // alert(
+    //   `Vacancy created successfully with:\n ${JSON.stringify(data, null, 2)}`,
+    // );
+    console.log(data);
+
+    const res = await createJob(data);
+    console.log(res);
+    if (res.insertedId) {
+      toast.success("Create Job Successfully");
+      e.target.reset();
+      redirect("/dashboard/recruiter")
+    }
   };
 
   return (
