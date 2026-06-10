@@ -143,40 +143,40 @@ export default function CreateJobForm() {
                 <Select.Popover className="border border-default-200/80 dark:border-default-700/50 bg-content1 shadow-xl rounded-xl">
                   <ListBox className="p-1">
                     <ListBox.Item
-                      id="software-development"
-                      textValue="software development"
+                      id="Software Development"
+                      textValue="Software Development"
                       className="rounded-lg text-sm"
                     >
                       Software Development
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="design-creative"
-                      textValue="design & creative"
+                      id="Design Creative"
+                      textValue="Design & Creative"
                       className="rounded-lg text-sm"
                     >
                       Design & Creative
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="marketing-sales"
-                      textValue="marketing & sales"
+                      id="Marketing Sales"
+                      textValue="Marketing & Sales"
                       className="rounded-lg text-sm"
                     >
                       Marketing & Sales
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="product-management"
-                      textValue="product management"
+                      id="Product Management"
+                      textValue="Product Management"
                       className="rounded-lg text-sm"
                     >
                       Product Management
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="data-science-analytics"
-                      textValue="data science & analytics"
+                      id="Data Science & Analytics"
+                      textValue="Data Science & Analytics"
                       className="rounded-lg text-sm"
                     >
                       Data Science & Analytics
@@ -209,40 +209,40 @@ export default function CreateJobForm() {
                 <Select.Popover className="border border-default-200/80 dark:border-default-700/50 bg-content1 shadow-xl rounded-xl">
                   <ListBox className="p-1">
                     <ListBox.Item
-                      id="full-time"
-                      textValue="full time"
+                      id="Full Time"
+                      textValue="Full Time"
                       className="rounded-lg text-sm"
                     >
                       Full-time
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="part-time"
-                      textValue="part time"
+                      id="Part Time"
+                      textValue="Part Time"
                       className="rounded-lg text-sm"
                     >
                       Part-time
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="contractual"
-                      textValue="contractual"
+                      id="Contractual"
+                      textValue="Contractual"
                       className="rounded-lg text-sm"
                     >
                       Contractual
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="internship"
-                      textValue="internship"
+                      id="Internship"
+                      textValue="Internship"
                       className="rounded-lg text-sm"
                     >
                       Internship
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item
-                      id="remote"
-                      textValue="remote"
+                      id="Remote"
+                      textValue="Remote"
                       className="rounded-lg text-sm"
                     >
                       Remote
