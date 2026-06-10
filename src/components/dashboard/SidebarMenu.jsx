@@ -15,7 +15,7 @@ export function SidebarMenu() {
     {
       icon: Bell,
       href: "/dashboard/recruiter/job/newJob",
-      label: "Create Job",
+      label: "Post A Job",
     },
     {
       icon: Briefcase,
@@ -43,6 +43,7 @@ export function SidebarMenu() {
   return (
     <>
       <aside className="hidden lg:block w-64  border-r border-zinc-700 ">
+        <h1 className="font-bold text-2xl m-4  ">Hireloop</h1>
         {navSection}
       </aside>
       <Drawer className="flex-1">

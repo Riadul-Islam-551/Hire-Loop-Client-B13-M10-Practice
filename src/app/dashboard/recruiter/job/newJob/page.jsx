@@ -57,7 +57,7 @@ export default function CreateJobForm() {
     if (res.insertedId) {
       toast.success("Create Job Successfully");
       e.target.reset();
-      redirect("/dashboard/recruiter");
+      redirect("/dashboard/recruiter/job");
     }
   };
 
