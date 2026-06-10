@@ -34,6 +34,7 @@ export default function CreateJobForm() {
   const mockCompanyData = {
     companyName: "Creative IT",
     companyId: "abcd_1234",
+    status: "active",
   };
 
   const onSubmit = async (e) => {
@@ -43,6 +44,7 @@ export default function CreateJobForm() {
 
     data.companyName = mockCompanyData.companyName;
     data.companyId = mockCompanyData.companyId;
+    data.status = mockCompanyData.status;
 
     // console.log("Job Vacancy Submitted Data:", data);
     // alert(
@@ -55,7 +57,7 @@ export default function CreateJobForm() {
     if (res.insertedId) {
       toast.success("Create Job Successfully");
       e.target.reset();
-      redirect("/dashboard/recruiter")
+      redirect("/dashboard/recruiter");
     }
   };
 
