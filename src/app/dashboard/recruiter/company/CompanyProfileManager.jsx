@@ -111,6 +111,7 @@ export default function CompanyProfileManager({ recruiter, recruiterCompany }) {
       setCompanyData(profilePayload);
       setIsEditing(false);
       setSelectedFile(null);
+      window.location.reload();
     } catch (err) {
       console.error("Submission failed:", err);
       setSubmitError("Something went wrong. Please try again.");
@@ -122,7 +123,7 @@ export default function CompanyProfileManager({ recruiter, recruiterCompany }) {
   // -------------------------------------------------------------
   // VIEW 1: EMPTY STATE
   // -------------------------------------------------------------
-  if (!companyData && !isEditing) {
+  if (!companyData._id && !isEditing) {
     return (
       <div className="max-w-4xl mx-auto py-16 px-4">
         <Card className="border-1 border-dashed border-default-300 bg-background/50 backdrop-blur-md py-12">

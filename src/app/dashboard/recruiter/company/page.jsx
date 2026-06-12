@@ -15,7 +15,8 @@ const page = async () => {
 
   // const user = session?.user;
   // console.log(user);
-  const recruiter = loggedInUser();
+  const recruiter = await loggedInUser();
+  console.log(recruiter)
 
   const company = await getLoggedInRecruiterCompany();
   console.log(company);
