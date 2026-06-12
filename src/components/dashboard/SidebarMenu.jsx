@@ -42,7 +42,7 @@ export function SidebarMenu() {
 
   return (
     <>
-      <aside className="hidden lg:block w-64  border-r border-zinc-700 ">
+      <aside className="hidden lg:block w-64  border-r border-zinc-300 dark:border-zinc-700 ">
         <h1 className="font-bold text-2xl m-4  ">Hireloop</h1>
         {navSection}
       </aside>
