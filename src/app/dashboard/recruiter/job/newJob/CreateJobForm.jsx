@@ -41,6 +41,7 @@ export default function CreateJobForm({ recruiterCompany }) {
     data.companyName = recruiterCompany.name;
     data.companyId = recruiterCompany._id;
     data.status = "active";
+    data.companyLogo = recruiterCompany.logoUrl;
 
     // console.log("Job Vacancy Submitted Data:", data);
     // alert(
