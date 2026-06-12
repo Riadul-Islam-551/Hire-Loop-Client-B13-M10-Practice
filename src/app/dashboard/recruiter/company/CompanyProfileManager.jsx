@@ -26,7 +26,7 @@ import { createRecruiterCompany } from "@/lib/actions/company";
 
 const IMGBB_API_KEY = process.env.NEXT_PUBLIC_IMAGE_API_KEY;
 
-export default function CompanyProfileManager({ user, recruiterCompany }) {
+export default function CompanyProfileManager({ recruiter, recruiterCompany }) {
   const [companyData, setCompanyData] = useState(recruiterCompany);
   const [isEditing, setIsEditing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -95,8 +95,8 @@ export default function CompanyProfileManager({ user, recruiterCompany }) {
         logoUrl: finalLogoUrl || "https://placehold.co/150x150?text=No+Logo",
         // ✅ FIX 2: Retain existing status on edit, default "Pending" on first register
         status: companyData?.status || "Pending",
-        recruiterID: user?.id,
-        recruiterName: user?.name,
+        recruiterID: recruiter?.id,
+        recruiterName: recruiter?.name,
       };
 
       // ✅ FIX 3: Only update state AFTER the DB call succeeds

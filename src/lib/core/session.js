@@ -1,10 +1,10 @@
 import { headers } from "next/headers";
 import { auth } from "../auth";
-import { serverFetch } from "../core/server";
 
-export const getLoggedInRecruiterCompany = async () => {
+export const loggedInUser = async () => {
   const session = await auth.api.getSession({
     headers: await headers(), // you need to pass the headers object.
   });
-  return serverFetch(`/api/my/companies?recruiterId=${session?.user?.id}`);
+
+  return session?.user;
 };
