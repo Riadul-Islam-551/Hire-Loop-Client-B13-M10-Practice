@@ -1,5 +1,3 @@
-import { headers } from "next/headers";
-import { auth } from "../auth";
 import { serverFetch } from "../core/server";
 import { loggedInUser } from "../core/session";
 
