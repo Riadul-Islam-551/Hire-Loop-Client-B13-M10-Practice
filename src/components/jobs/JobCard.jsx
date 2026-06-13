@@ -16,9 +16,10 @@ import {
   Calendar,
   ArrowUpRight,
 } from "@gravity-ui/icons";
+import Link from "next/link";
 
 export const JobCard = ({ jobData }) => {
-  console.log(jobData);
+  // console.log(jobData);
 
   if (!jobData) return null;
 
@@ -120,21 +121,16 @@ export const JobCard = ({ jobData }) => {
       </Card.Content>
 
       {/* Card Footer: Interactive Target Actions */}
-      <CardFooter className="px-5 py-4 pt-2 flex gap-2 w-full">
-        <Button
-          variant="bordered"
-          size="sm"
-          className="flex-1 font-medium border-default-200 text-default-700 hover:bg-default-100"
-        >
-          Details
-        </Button>
-        <Button
-          color="primary"
-          size="sm"
-          className="flex-1 font-semibold shadow-sm shadow-primary/20"
-          endContent={<ArrowUpRight className="w-4 h-4" />}
-        >
-          Apply Now
+      <CardFooter className="px-5 py-4 pt-2 w-full">
+        <Button className={"w-full"}>
+          <Link
+            href={`/jobs/${jobData._id}`}
+            variant="bordered"
+            size="sm"
+            className="font-medium border-default-200 text-default-700 hover:bg-default-100 "
+          >
+            View Details
+          </Link>
         </Button>
       </CardFooter>
     </Card>
