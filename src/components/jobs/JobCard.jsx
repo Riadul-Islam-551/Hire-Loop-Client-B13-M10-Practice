@@ -92,7 +92,7 @@ export const JobCard = ({ jobData }) => {
 
       {/* Card Body: Info Fields & Dynamic Context */}
       <Card.Content className="px-5 py-2 flex flex-col gap-4">
-        <p className="text-default-600 text-sm line-clamp-2 min-h-[40px] text-left">
+        <p className="text-default-600 text-sm line-clamp-2 min-h-10 text-left">
           {jobDescription}
         </p>
 
