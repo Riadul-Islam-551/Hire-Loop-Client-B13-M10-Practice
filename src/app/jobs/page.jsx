@@ -1,4 +1,4 @@
-import { JobCard } from "@/components/jobs/JobCard";
+import JobSearchFilter from "@/components/jobs/JobSearchFilter";
 import { getAllJobs } from "@/lib/api/jobs";
 import { Briefcase } from "@gravity-ui/icons";
 import React from "react";
@@ -6,7 +6,7 @@ import React from "react";
 const JobPage = async () => {
   const allJobs = await getAllJobs();
 
-  // Premium Empty State View
+  // Premium Complete Structural Failure Empty State View (Database Level)
   if (!allJobs || allJobs.length === 0) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 max-w-xl mx-auto mt-20">
@@ -50,12 +50,8 @@ const JobPage = async () => {
           </div>
         </div>
 
-        {/* Responsive Dashboard Grid Interface */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allJobs.map((jobData) => (
-            <JobCard key={jobData._id} jobData={jobData} />
-          ))}
-        </div>
+        {/* Client Search and Responsive Filter Component Layer */}
+        <JobSearchFilter allJobs={allJobs} />
       </div>
     </main>
   );
