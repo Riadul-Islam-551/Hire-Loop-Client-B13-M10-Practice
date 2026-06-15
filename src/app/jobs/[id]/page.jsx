@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { getJobById } from "@/lib/api/jobs";
-import { Button, Card, Chip } from "@heroui/react";
+import { Button, Card, CardHeader, Chip } from "@heroui/react";
 import {
   Briefcase,
   Pin,
@@ -23,8 +23,8 @@ const JobDetailsPage = async ({ params }) => {
   if (!jobDetails) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
-        <p className="text-muted-foreground text-lg mb-4">Job details could not be retrieved.</p>
-        <Button as={Link} href="/jobs" color="primary" variant="flat">
+        <p className="text-default-500 text-lg mb-4 font-medium">Job details could not be retrieved.</p>
+        <Button as={Link} href="/jobs" color="primary" variant="flat" className="font-semibold">
           Back to Jobs
         </Button>
       </div>
@@ -52,58 +52,58 @@ const JobDetailsPage = async ({ params }) => {
   const formattedBenefits = benefits?.split(",").map((ben) => ben.trim()) || [];
 
   return (
-    <div className="min-h-screen bg-content2/10 pt-18  pb-12 px-4 sm:px-6 lg:px-8 mt-16">
-      <div className="max-w-6xl mx-auto space-y-8">
+    <div className="min-h-screen bg-default-50/50 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto space-y-6">
         
         {/* Back Navigation Link */}
         <div className="flex items-center">
           <Link 
             href="/jobs" 
-            className="group flex items-center gap-2 text-sm font-medium text-default-500 hover:text-primary transition-colors"
+            className="group flex items-center gap-2 text-sm font-semibold text-default-500 hover:text-primary transition-all duration-300 ease-in-out"
           >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1.5" />
             Back to Job Postings
           </Link>
         </div>
 
         {/* --- Header Panel --- */}
-        <Card className="w-full border-none shadow-sm bg-background p-6 md:p-8">
-          <Card.Description className="p-0 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <Card className="w-full border border-default-100 bg-background p-2 md:p-4 shadow-sm" radius="lg">
+          <Card.Description className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-4">
             <div className="flex items-center gap-5">
-              <div className="relative w-20 h-20 rounded-2xl bg-content2 overflow-hidden flex items-center justify-center p-2 border border-default-100 shadow-inner">
+              <div className="relative w-20 h-20 rounded-2xl bg-default-100 overflow-hidden flex items-center justify-center p-2 border border-default-200/60 shadow-sm transition-transform hover:scale-105 duration-300">
                 {companyLogo ? (
                   <Image
                     src={companyLogo}
                     alt={`${companyName} logo`}
                     fill
-                    className="object-contain p-2"
+                    className="object-contain p-2.5"
                     priority
                   />
                 ) : (
                   <Briefcase className="w-8 h-8 text-default-400" />
                 )}
               </div>
-              <div className="space-y-1.5">
-                <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-default-900">
+              <div className="space-y-1">
+                <h1 className="text-2xl md:text-3xl font-black tracking-tight text-default-900">
                   {jobTitle}
                 </h1>
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                  <span className="font-semibold text-primary hover:underline cursor-pointer">
+                  <span className="font-bold text-primary hover:underline transition-all cursor-pointer">
                     {companyName}
                   </span>
                   <span className="text-default-300">•</span>
-                  <span className="text-default-500 flex items-center gap-1">
+                  <span className="text-default-500 font-medium flex items-center gap-1.5">
                     <Pin className="w-3.5 h-3.5 text-default-400" /> {location}
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 w-full md:w-auto">
-              <Chip variant="flat" color="primary" size="md" className="font-medium px-2">
+            <div className="flex flex-wrap gap-2.5 w-full md:w-auto">
+              <Chip variant="flat" color="primary" radius="md" size="md" className="font-semibold px-2 border border-primary-200/30">
                 {jobType}
               </Chip>
-              <Chip variant="flat" color="secondary" size="md" className="font-medium px-2">
+              <Chip variant="flat" color="secondary" radius="md" size="md" className="font-semibold px-2 border border-secondary-200/30">
                 {jobCategory}
               </Chip>
             </div>
@@ -111,36 +111,36 @@ const JobDetailsPage = async ({ params }) => {
         </Card>
 
         {/* --- Main Content Architecture --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           
           {/* Left Column: Descriptive Context */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6">
             
             {/* Job Description Card */}
-            <Card className="border-none shadow-sm bg-background p-6 md:p-8">
-              <Card.Description className="p-0 space-y-6">
-                <div className="flex items-center gap-2 pb-3 border-b border-default-100">
+            <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
+              <Card.Description className="p-6 md:p-8 space-y-4">
+                <div className="flex items-center gap-2.5 pb-3 border-b border-default-100">
                   <Briefcase className="w-5 h-5 text-primary" />
-                  <h2 className="text-xl font-bold text-default-800">Job Description</h2>
+                  <h2 className="text-xl font-bold text-default-800 tracking-tight">Job Description</h2>
                 </div>
-                <p className="text-default-600 leading-relaxed text-sm md:text-base">
+                <p className="text-default-600 leading-relaxed text-sm md:text-base font-normal whitespace-pre-line">
                   {jobDescription}
                 </p>
               </Card.Description>
             </Card>
 
             {/* Core Responsibilities Card */}
-            <Card className="border-none shadow-sm bg-background p-6 md:p-8">
-              <Card.Description className="p-0 space-y-6">
-                <div className="flex items-center gap-2 pb-3 border-b border-default-100">
+            <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
+              <Card.Description className="p-6 md:p-8 space-y-4">
+                <div className="flex items-center gap-2.5 pb-3 border-b border-default-100">
                   <Layers className="w-5 h-5 text-secondary" />
-                  <h2 className="text-xl font-bold text-default-800">Key Responsibilities</h2>
+                  <h2 className="text-xl font-bold text-default-800 tracking-tight">Key Responsibilities</h2>
                 </div>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   {formattedResponsibilities.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm md:text-base text-default-600">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
-                      <span>{item}</span>
+                    <li key={index} className="group flex items-start gap-3.5 text-sm md:text-base text-default-600 transition-colors duration-200 hover:text-default-900">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -151,17 +151,19 @@ const JobDetailsPage = async ({ params }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Requirements Card */}
-              <Card className="border-none shadow-sm bg-background p-6">
-                <Card.Description className="p-0 space-y-4">
-                  <div className="flex items-center gap-2 pb-2 border-b border-default-100">
+              <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
+                <Card.Description className="p-6 space-y-4">
+                  <div className="flex items-center gap-2.5 pb-2.5 border-b border-default-100">
                     <ShieldCheck className="w-5 h-5 text-success" />
-                    <h3 className="text-lg font-bold text-default-800">Requirements</h3>
+                    <h3 className="text-lg font-bold text-default-800 tracking-tight">Requirements</h3>
                   </div>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-3">
                     {formattedRequirements.map((req, index) => (
-                      <li key={index} className="flex items-center gap-2.5 text-sm text-default-600">
-                        <Check className="w-4 h-4 text-success flex-shrink-0" />
-                        <span>{req}</span>
+                      <li key={index} className="group flex items-center gap-3 text-sm text-default-600 transition-colors duration-200 hover:text-default-900">
+                        <div className="p-0.5 rounded-md bg-success-50 text-success transition-transform duration-300 group-hover:rotate-12">
+                          <Check className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="font-medium">{req}</span>
                       </li>
                     ))}
                   </ul>
@@ -169,17 +171,19 @@ const JobDetailsPage = async ({ params }) => {
               </Card>
 
               {/* Benefits Card */}
-              <Card className="border-none shadow-sm bg-background p-6">
-                <Card.Description className="p-0 space-y-4">
-                  <div className="flex items-center gap-2 pb-2 border-b border-default-100">
+              <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
+                <Card.Description className="p-6 space-y-4">
+                  <div className="flex items-center gap-2.5 pb-2.5 border-b border-default-100">
                     <Sparkles className="w-5 h-5 text-warning" />
-                    <h3 className="text-lg font-bold text-default-800">Benefits & Perks</h3>
+                    <h3 className="text-lg font-bold text-default-800 tracking-tight">Benefits & Perks</h3>
                   </div>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-3">
                     {formattedBenefits.map((benefit, index) => (
-                      <li key={index} className="flex items-center gap-2.5 text-sm text-default-600">
-                        <Check className="w-4 h-4 text-warning flex-shrink-0" />
-                        <span>{benefit}</span>
+                      <li key={index} className="group flex items-center gap-3 text-sm text-default-600 transition-colors duration-200 hover:text-default-900">
+                        <div className="p-0.5 rounded-md bg-warning-50 text-warning transition-transform duration-300 group-hover:rotate-12">
+                          <Check className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="font-medium">{benefit}</span>
                       </li>
                     ))}
                   </ul>
@@ -189,46 +193,46 @@ const JobDetailsPage = async ({ params }) => {
           </div>
 
           {/* Right Column: Sidebar Actions & Summary Metrics */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:sticky lg:top-24">
             
             {/* Quick Summary Grid Card */}
-            <Card className="border-none shadow-sm bg-background p-6">
-              <Card.Description className="p-0 space-y-6">
-                <h3 className="text-lg font-bold text-default-800 pb-3 border-b border-default-100">
+            <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
+              <Card.Description className="p-6 space-y-5">
+                <h3 className="text-lg font-bold text-default-800 pb-3 border-b border-default-100 tracking-tight">
                   Job Summary
                 </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-4.5">
                   {/* Metric Row 1: Compensation */}
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center flex-shrink-0">
-                      <FileDollar className="w-5 h-5 text-success" />
+                  <div className="group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1">
+                    <div className="w-11 h-11 rounded-xl bg-success-50 text-success flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-success-100">
+                      <FileDollar className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs text-default-400 font-medium uppercase tracking-wider">Salary Range</p>
-                      <p className="text-sm font-semibold text-default-700">${Number(salaryRange).toLocaleString()} / year</p>
+                      <p className="text-[11px] text-default-400 font-bold uppercase tracking-wider">Salary Range</p>
+                      <p className="text-sm font-bold text-default-700 mt-0.5">${Number(salaryRange).toLocaleString()} / year</p>
                     </div>
                   </div>
 
                   {/* Metric Row 2: Location */}
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Pin className="w-5 h-5 text-primary" />
+                  <div className="group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1">
+                    <div className="w-11 h-11 rounded-xl bg-primary-50 text-primary flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-primary-100">
+                      <Pin className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs text-default-400 font-medium uppercase tracking-wider">Location</p>
-                      <p className="text-sm font-semibold text-default-700">{location}</p>
+                      <p className="text-[11px] text-default-400 font-bold uppercase tracking-wider">Location</p>
+                      <p className="text-sm font-bold text-default-700 mt-0.5">{location}</p>
                     </div>
                   </div>
 
                   {/* Metric Row 3: Deadline */}
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-danger/10 flex items-center justify-center flex-shrink-0">
-                      <Calendar className="w-5 h-5 text-danger" />
+                  <div className="group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1">
+                    <div className="w-11 h-11 rounded-xl bg-danger-50 text-danger flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-danger-100">
+                      <Calendar className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs text-default-400 font-medium uppercase tracking-wider">Application Deadline</p>
-                      <p className="text-sm font-semibold text-default-700">
+                      <p className="text-[11px] text-default-400 font-bold uppercase tracking-wider">Application Deadline</p>
+                      <p className="text-sm font-bold text-default-700 mt-0.5">
                         {new Date(applicationDate).toLocaleDateString('en-US', {
                           month: 'short',
                           day: 'numeric',
@@ -242,15 +246,16 @@ const JobDetailsPage = async ({ params }) => {
             </Card>
 
             {/* Direct Action Card Block */}
-            <Card className="border-none shadow-sm bg-gradient-to-br from-primary to-primary-600 text-primary-foreground p-6">
-              <Card.Description className="p-0 space-y-4">
-                <h4 className="text-lg font-bold">Interested in this role?</h4>
-                <p className="text-xs opacity-90 leading-relaxed">
+            <Card className="border-none shadow-md bg-gradient-to-br from-primary-600 to-primary-700 text-white" radius="lg">
+              <Card.Description className="p-6 space-y-4">
+                <h4 className="text-lg font-bold tracking-tight">Interested in this role?</h4>
+                <p className="text-xs opacity-85 leading-relaxed font-medium">
                   Make sure your portfolio and profile details are complete before submitting your application package to {companyName}.
                 </p>
                 <Button 
                   size="lg" 
-                  className="w-full text-primary font-bold shadow-md hover:bg-default-50 transition-transform active:scale-[0.98] mt-2"
+                  className="w-full text-primary font-bold shadow-sm transition-all duration-300 hover:bg-default-100 active:scale-[0.97] mt-1.5"
+                  radius="md"
                 >
                   Apply For Job
                 </Button>
