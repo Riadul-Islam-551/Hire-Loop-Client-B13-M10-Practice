@@ -32,7 +32,6 @@ const JobDetailsPage = async ({ params }) => {
   }
 
   const {
-    _id,
     jobTitle,
     jobCategory,
     jobType,
@@ -253,7 +252,7 @@ const JobDetailsPage = async ({ params }) => {
                 <p className="text-xs opacity-85 leading-relaxed font-medium">
                   Make sure your portfolio and profile details are complete before submitting your application package to {companyName}.
                 </p>
-                <Link href={`/jobs/${_id}/apply`} 
+                <Link href={`/jobs/${id}/apply`} 
                   size="lg" 
                   className="w-full text-center bg-green-500 p-3 rounded-full  text-primary font-bold shadow-sm transition-all duration-300 hover:bg-default-100 active:scale-[0.97] mt-1.5"
                   radius="md"

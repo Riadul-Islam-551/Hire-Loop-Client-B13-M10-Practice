@@ -13,9 +13,15 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter, useSearchParams } from "next/navigation";
 
 const SignInPage = () => {
+  const searchParams = useSearchParams();
+  const navigateTo = searchParams.get("redirect") || "/";
+  const router = useRouter();
+
+  console.log(navigateTo);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -28,7 +34,7 @@ const SignInPage = () => {
 
     if (data) {
       alert("Signed in successfully!");
-      redirect("/");
+      router.push(navigateTo);
     }
 
     if (error) {
