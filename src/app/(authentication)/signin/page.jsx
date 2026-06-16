@@ -20,7 +20,7 @@ const SignInPage = () => {
   const navigateTo = searchParams.get("redirect") || "/";
   const router = useRouter();
 
-  console.log(navigateTo);
+  // console.log(navigateTo);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -181,7 +181,7 @@ const SignInPage = () => {
           <p className="mt-8 text-center text-sm font-medium text-slate-500 dark:text-zinc-400">
             Don&apos;t have an account?{" "}
             <Link
-              href="/registration"
+              href={`/registration?redirect=${navigateTo}`}
               className="text-purple-600 dark:text-purple-400 font-bold hover:underline transition-all"
             >
               Register Here

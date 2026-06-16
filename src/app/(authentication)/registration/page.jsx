@@ -15,9 +15,14 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter, useSearchParams } from "next/navigation";
 
 const RegistrationPage = () => {
+  const searchParams = useSearchParams();
+  const navigateTo = searchParams.get("redirect");
+  const router = useRouter();
+  console.log(navigateTo);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -35,7 +40,7 @@ const RegistrationPage = () => {
 
     if (data) {
       alert("Created account successfully!");
-      redirect("/");
+      router.push(navigateTo);
     }
 
     if (error) {
@@ -245,7 +250,7 @@ const RegistrationPage = () => {
           <p className="mt-8 text-center text-sm font-medium text-slate-500 dark:text-zinc-400">
             Already have an account?{" "}
             <Link
-              href="/signin"
+              href={`/signin?redirect=${navigateTo}`}
               className="text-purple-600 dark:text-purple-400 font-bold hover:underline transition-all"
             >
               Sign In Here
