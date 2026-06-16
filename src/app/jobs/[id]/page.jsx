@@ -68,7 +68,7 @@ const JobDetailsPage = async ({ params }) => {
 
         {/* --- Header Panel --- */}
         <Card className="w-full border border-default-100 bg-background p-2 md:p-4 shadow-sm" radius="lg">
-          <Card.Description className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-4">
+          <Card.Content className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-4">
             <div className="flex items-center gap-5">
               <div className="relative w-20 h-20 rounded-2xl bg-default-100 overflow-hidden flex items-center justify-center p-2 border border-default-200/60 shadow-sm transition-transform hover:scale-105 duration-300">
                 {companyLogo ? (
@@ -107,7 +107,7 @@ const JobDetailsPage = async ({ params }) => {
                 {jobCategory}
               </Chip>
             </div>
-          </Card.Description>
+          </Card.Content>
         </Card>
 
         {/* --- Main Content Architecture --- */}
@@ -118,7 +118,7 @@ const JobDetailsPage = async ({ params }) => {
             
             {/* Job Description Card */}
             <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
-              <Card.Description className="p-6 md:p-8 space-y-4">
+              <Card.Content className="p-6 md:p-8 space-y-4">
                 <div className="flex items-center gap-2.5 pb-3 border-b border-default-100">
                   <Briefcase className="w-5 h-5 text-primary" />
                   <h2 className="text-xl font-bold text-default-800 tracking-tight">Job Description</h2>
@@ -126,12 +126,12 @@ const JobDetailsPage = async ({ params }) => {
                 <p className="text-default-600 leading-relaxed text-sm md:text-base font-normal whitespace-pre-line">
                   {jobDescription}
                 </p>
-              </Card.Description>
+              </Card.Content>
             </Card>
 
             {/* Core Responsibilities Card */}
             <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
-              <Card.Description className="p-6 md:p-8 space-y-4">
+              <Card.Content className="p-6 md:p-8 space-y-4">
                 <div className="flex items-center gap-2.5 pb-3 border-b border-default-100">
                   <Layers className="w-5 h-5 text-secondary" />
                   <h2 className="text-xl font-bold text-default-800 tracking-tight">Key Responsibilities</h2>
@@ -144,7 +144,7 @@ const JobDetailsPage = async ({ params }) => {
                     </li>
                   ))}
                 </ul>
-              </Card.Description>
+              </Card.Content>
             </Card>
 
             {/* Requirements & Perks Container */}
@@ -152,7 +152,7 @@ const JobDetailsPage = async ({ params }) => {
               
               {/* Requirements Card */}
               <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
-                <Card.Description className="p-6 space-y-4">
+                <Card.Content className="p-6 space-y-4">
                   <div className="flex items-center gap-2.5 pb-2.5 border-b border-default-100">
                     <ShieldCheck className="w-5 h-5 text-success" />
                     <h3 className="text-lg font-bold text-default-800 tracking-tight">Requirements</h3>
@@ -167,12 +167,12 @@ const JobDetailsPage = async ({ params }) => {
                       </li>
                     ))}
                   </ul>
-                </Card.Description>
+                </Card.Content>
               </Card>
 
               {/* Benefits Card */}
               <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
-                <Card.Description className="p-6 space-y-4">
+                <Card.Content className="p-6 space-y-4">
                   <div className="flex items-center gap-2.5 pb-2.5 border-b border-default-100">
                     <Sparkles className="w-5 h-5 text-warning" />
                     <h3 className="text-lg font-bold text-default-800 tracking-tight">Benefits & Perks</h3>
@@ -187,7 +187,7 @@ const JobDetailsPage = async ({ params }) => {
                       </li>
                     ))}
                   </ul>
-                </Card.Description>
+                </Card.Content>
               </Card>
             </div>
           </div>
@@ -197,7 +197,7 @@ const JobDetailsPage = async ({ params }) => {
             
             {/* Quick Summary Grid Card */}
             <Card className="border border-default-100 bg-background shadow-sm" radius="lg">
-              <Card.Description className="p-6 space-y-5">
+              <Card.Content className="p-6 space-y-5">
                 <h3 className="text-lg font-bold text-default-800 pb-3 border-b border-default-100 tracking-tight">
                   Job Summary
                 </h3>
@@ -242,12 +242,12 @@ const JobDetailsPage = async ({ params }) => {
                     </div>
                   </div>
                 </div>
-              </Card.Description>
+              </Card.Content>
             </Card>
 
             {/* Direct Action Card Block */}
             <Card className="border-none shadow-md bg-gradient-to-br from-primary-600 to-primary-700 text-white" radius="lg">
-              <Card.Description className="p-6 space-y-4">
+              <Card.Content className="p-6 space-y-4">
                 <h4 className="text-lg font-bold tracking-tight">Interested in this role?</h4>
                 <p className="text-xs opacity-85 leading-relaxed font-medium">
                   Make sure your portfolio and profile details are complete before submitting your application package to {companyName}.
@@ -259,7 +259,7 @@ const JobDetailsPage = async ({ params }) => {
                 >
                   Apply For Job
                 </Button>
-              </Card.Description>
+              </Card.Content>
             </Card>
 
           </div>
