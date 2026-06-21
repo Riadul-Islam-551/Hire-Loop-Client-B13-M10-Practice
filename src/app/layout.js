@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Hire Loop",
+  title: "Work Lio",
   description:
-    "Find the best talent for your team with Hire Loop - the ultimate job board.",
+    "Find the best talent for your team with WorkLio - the ultimate job board.",
 };
 
 export default function RootLayout({ children }) {

@@ -72,7 +72,7 @@ export default function CreateJobForm({ recruiterCompany }) {
             </h2>
             <p className="text-sm text-default-500 mt-2 max-w-xl leading-relaxed">
               Fill out the details below to dispatch a premium professional
-              circular onto the HireLoop corporate network feed.
+              circular onto the WorkLio corporate network feed.
             </p>
           </div>
 

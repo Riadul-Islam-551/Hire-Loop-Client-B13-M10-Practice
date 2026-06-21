@@ -136,7 +136,7 @@ export default function CompanyProfileManager({ recruiter, recruiterCompany }) {
                 No Registered Workspace Found
               </h2>
               <p className="text-default-500 max-w-sm mx-auto text-sm">
-                As a new recruiter on HireLoop, you must register your company
+                As a new recruiter on WorkLio, you must register your company
                 details before publishing job circulars.
               </p>
             </div>

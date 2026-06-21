@@ -43,7 +43,7 @@ export function SidebarMenu() {
   return (
     <>
       <aside className="hidden lg:block w-64  border-r border-zinc-300 dark:border-zinc-700 ">
-        <h1 className="font-bold text-2xl m-4  ">Hireloop</h1>
+        <h1 className="font-bold text-2xl m-4  ">WorkLio</h1>
         {navSection}
       </aside>
       <Drawer className="flex-1">
@@ -55,7 +55,7 @@ export function SidebarMenu() {
             <Drawer.Dialog>
               <Drawer.CloseTrigger />
               <Drawer.Header>
-                <Drawer.Heading>HireLoop</Drawer.Heading>
+                <Drawer.Heading>WorkLio</Drawer.Heading>
               </Drawer.Header>
               <Drawer.Body>{navSection}</Drawer.Body>
             </Drawer.Dialog>

@@ -38,7 +38,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base text-slate-600 dark:text-zinc-400 md:text-xl font-normal leading-relaxed">
-            HireLoop connects top talent with world-class companies. Browse
+            WorkLio connects top talent with world-class companies. Browse
             thousands of curated opportunities and land your next role faster.
           </p>
 

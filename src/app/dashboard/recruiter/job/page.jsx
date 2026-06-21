@@ -41,7 +41,7 @@ const Page = async () => {
             </h1>
             <p className="text-sm text-default-500 mt-1 max-w-xl">
               Monitor, Refine or Review live corporate circular circulars
-              running on the HireLoop grid.
+              running on the WorkLio grid.
             </p>
           </div>
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-default-400 bg-default-100 dark:bg-default-800/40 px-3 py-1.5 rounded-xl self-start sm:self-center">

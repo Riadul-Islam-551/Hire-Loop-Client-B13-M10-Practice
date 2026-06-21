@@ -20,7 +20,7 @@ const Footer = () => {
             >
               <Image
                 src="/assets/logo.png"
-                alt="HireLoop Logo"
+                alt="WorkLio Logo"
                 width={160}
                 height={50}
                 className="object-contain brightness-110"
@@ -123,7 +123,7 @@ const Footer = () => {
         {/* Bottom Copyright & Legal Section */}
         <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row gap-4 items-center justify-between text-xs text-zinc-600 font-medium">
           <p>
-            &copy; {new Date().getFullYear()} — HireLoop. All rights reserved.
+            &copy; {new Date().getFullYear()} — WorkLio. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">

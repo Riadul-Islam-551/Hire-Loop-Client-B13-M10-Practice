@@ -28,7 +28,7 @@ const HomeJobSection = () => {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/40 mb-4">
             <SparklesFill className="size-3.5 text-indigo-600 dark:text-indigo-400 animate-spin animation-duration:[6s]" />
             <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-              Get Started with HireLoop
+              Get Started with WorkLio
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
