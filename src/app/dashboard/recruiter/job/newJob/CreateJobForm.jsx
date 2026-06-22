@@ -31,7 +31,7 @@ import { createJob } from "@/lib/actions/jobs";
 import { redirect } from "next/navigation";
 
 export default function CreateJobForm({ recruiterCompany }) {
-  console.log(recruiterCompany);
+  // console.log(recruiterCompany);
 
   const onSubmit = async (e) => {
     e.preventDefault();

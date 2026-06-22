@@ -1,12 +1,13 @@
 import { loggedInUser } from "@/lib/core/session";
 import { redirect } from "next/navigation";
 import React from "react";
+import JobApply from "./JobApply";
 
 const ApplyPage = async ({ params }) => {
   const { id } = await params;
-//   console.log(id);
+  //   console.log(id);
   const user = await loggedInUser();
-//   console.log(user);
+  //   console.log(user);
   if (!user) {
     // console.log("no user ")
     redirect(`/signin?redirect=/jobs/${id}/apply`);
@@ -24,7 +25,9 @@ const ApplyPage = async ({ params }) => {
     );
   }
 
-  return <div className="mt-30">job apply page here</div>;
+  // const jobDetails = 
+
+  return <JobApply applicant={user} ></JobApply>;
 };
 
 export default ApplyPage;
