@@ -68,7 +68,7 @@ const ApplyPage = async ({ params }) => {
   // Fallback View 2: Reached application limits
   if (usedApplications >= plans.maxApplicationPerMonth) {
     return (
-      <div className="min-h-[85vh] w-full flex justify-center items-center px-4 py-12">
+      <div className="mt-30 min-h-[85vh] w-full flex justify-center items-center px-4 py-12">
         <Card className="max-w-xl w-full border-small border-default-100 shadow-2xl bg-content1/50 backdrop-blur-md relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-warning-500/10 rounded-full blur-2xl -mr-10 -mt-10" />
           <Card.Description className="flex flex-col items-center text-center p-10 gap-6">
@@ -124,7 +124,7 @@ const ApplyPage = async ({ params }) => {
 
   // Standard Interactive View
   return (
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <main className="mt-30 container  mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Top Telemetry Sheet */}
       <Card className="border-small border-default-100 shadow-sm bg-content1/40 backdrop-blur-sm">
         <Card.Description className="p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -180,7 +180,7 @@ const ApplyPage = async ({ params }) => {
       </Card>
 
       {/* Main Core Application Package Form Injection */}
-      <div className="bg-content1 rounded-2xl border border-default-100 shadow-md p-1 sm:p-2">
+      <div className="bg-content1 rounded-2xl p-1 sm:p-2">
         <JobApply applicant={user} jobDetails={jobDetails} />
       </div>
     </main>
