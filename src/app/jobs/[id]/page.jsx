@@ -139,7 +139,7 @@ const JobDetailsPage = async ({ params }) => {
                 <ul className="space-y-3">
                   {formattedResponsibilities.map((item, index) => (
                     <li key={index} className="group flex items-start gap-3.5 text-sm md:text-base text-default-600 transition-colors duration-200 hover:text-default-900">
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-secondary shrink-0 transition-transform duration-300 group-hover:scale-125" />
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -205,7 +205,7 @@ const JobDetailsPage = async ({ params }) => {
                 <div className="space-y-4.5">
                   {/* Metric Row 1: Compensation */}
                   <div className="group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1">
-                    <div className="w-11 h-11 rounded-xl bg-success-50 text-success flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-success-100">
+                    <div className="w-11 h-11 rounded-xl bg-success-50 text-success flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-success-100">
                       <FileDollar className="w-5 h-5" />
                     </div>
                     <div>
@@ -216,7 +216,7 @@ const JobDetailsPage = async ({ params }) => {
 
                   {/* Metric Row 2: Location */}
                   <div className="group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1">
-                    <div className="w-11 h-11 rounded-xl bg-primary-50 text-primary flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-primary-100">
+                    <div className="w-11 h-11 rounded-xl bg-primary-50 text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-primary-100">
                       <Pin className="w-5 h-5" />
                     </div>
                     <div>
@@ -227,7 +227,7 @@ const JobDetailsPage = async ({ params }) => {
 
                   {/* Metric Row 3: Deadline */}
                   <div className="group flex items-center gap-4 transition-transform duration-300 hover:translate-x-1">
-                    <div className="w-11 h-11 rounded-xl bg-danger-50 text-danger flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-danger-100">
+                    <div className="w-11 h-11 rounded-xl bg-danger-50 text-danger flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-danger-100">
                       <Calendar className="w-5 h-5" />
                     </div>
                     <div>
@@ -246,7 +246,7 @@ const JobDetailsPage = async ({ params }) => {
             </Card>
 
             {/* Direct Action Card Block */}
-            <Card className="border-none shadow-md bg-gradient-to-br from-primary-600 to-primary-700 text-white" radius="lg">
+            <Card className="border-none shadow-md bg-linear-to-br from-primary-600 to-primary-700 text-white" radius="lg">
               <Card.Content className="p-6 space-y-4">
                 <h4 className="text-lg font-bold tracking-tight">Interested in this role?</h4>
                 <p className="text-xs opacity-85 leading-relaxed font-medium">

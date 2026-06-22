@@ -2,6 +2,7 @@ import { loggedInUser } from "@/lib/core/session";
 import { redirect } from "next/navigation";
 import React from "react";
 import JobApply from "./JobApply";
+import { getJobById } from "@/lib/api/jobs";
 
 const ApplyPage = async ({ params }) => {
   const { id } = await params;
@@ -25,9 +26,11 @@ const ApplyPage = async ({ params }) => {
     );
   }
 
+  const jobDetails = await getJobById(id)
+
   // const jobDetails = 
 
-  return <JobApply applicant={user} ></JobApply>;
+  return <JobApply applicant={user} jobDetails={jobDetails}></JobApply>;
 };
 
 export default ApplyPage;
