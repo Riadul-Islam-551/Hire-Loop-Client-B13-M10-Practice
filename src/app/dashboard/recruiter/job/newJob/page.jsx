@@ -26,7 +26,7 @@ const page = async () => {
                 No Registered Company Found
               </h1>
               <p className="text-sm text-default-500 leading-relaxed">
-                Before you can publish your job circulars on HireLoop, you must
+                Before you can publish your job circulars on WorkLio, you must
                 establish a verified organizational profile.
               </p>
             </div>

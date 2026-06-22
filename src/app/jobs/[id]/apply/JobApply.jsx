@@ -23,6 +23,7 @@ import {
   Pin,
 } from "@gravity-ui/icons";
 import Image from "next/image";
+import { submitApplication } from "@/lib/actions/applications";
 
 const JobApply = ({ applicant, jobDetails }) => {
   // console.log("applicantData:", applicant);
@@ -34,7 +35,7 @@ const JobApply = ({ applicant, jobDetails }) => {
   const location = jobDetails?.location || "Remote / On-site";
 
   // Form submit handler tracking requested plain object layout
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = {};
@@ -50,18 +51,24 @@ const JobApply = ({ applicant, jobDetails }) => {
     data.companyID = jobDetails?.companyId || "";
     data.jobTitle = jobTitle;
 
-    console.log(data);
+    // console.log(data);
+
+    const res = await submitApplication(data);
+    // console.log(res);
+    if (res?.insertedId) {
+      alert("Application submitted successfully");
+    }
   };
 
   return (
     <div className="pt-30  min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-default-50/50 flex flex-col items-center">
       <div className="max-w-2xl w-full space-y-6">
         {/* Job Context Header Sheet */}
-        <Card className="border border-default-200/80 shadow-md bg-gradient-to-r from-background to-default-50/50 overflow-hidden">
+        <Card className="border border-default-200/80 shadow-md bg-linear-to-r from-background to-default-50/50 overflow-hidden">
           <Card.Description className="p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full">
               {/* Premium Visual Corporate Identity Indicator */}
-              <div className="w-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-primary/20 shrink-0">
+              <div className="w-14 rounded-xl bg-linear-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-primary/20 shrink-0">
                 <Image
                   src={jobDetails?.companyLogo}
                   alt={jobDetails?.name}
