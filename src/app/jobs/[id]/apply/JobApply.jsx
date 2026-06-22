@@ -48,7 +48,7 @@ const JobApply = ({ applicant, jobDetails }) => {
     // Append injection targets implicitly
     data.jobId = jobDetails?._id || "";
     data.applicantId = applicant?.id || "";
-    data.companyID = jobDetails?.companyId || "";
+    data.companyId = jobDetails?.companyId || "";
     data.jobTitle = jobTitle;
 
     // console.log(data);
