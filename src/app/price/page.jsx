@@ -1,15 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card, CardHeader, CardFooter, Button, Chip } from "@heroui/react";
-import {
-  Check,
-  ShieldCheck,
-  Star,
-  HandOk,
-  CircleChevronRight,
-  Rocket,
-} from "@gravity-ui/icons";
+import { Card, CardHeader, CardFooter, Chip } from "@heroui/react";
+import { Check, ShieldCheck, Star, HandOk, Rocket } from "@gravity-ui/icons";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 
@@ -22,6 +15,7 @@ export default function Pricing() {
     seeker: [
       {
         name: "Starter Loop",
+        id: "seeker-free",
         price: "0",
         description: "Essential tools to kickstart your professional path.",
         features: [
@@ -38,10 +32,11 @@ export default function Pricing() {
       },
       {
         name: "Pro Hunter",
+        id: "seeker-pro",
         price: "19",
         description: "Accelerate your hiring success with premium visibility.",
         features: [
-          "Unlimited job applications",
+          "Apply to 10 jobs per month",
           "Priority application processing",
           "Featured 'Top Candidate' badge",
           "Direct recruiter messaging channel",
@@ -55,6 +50,7 @@ export default function Pricing() {
       },
       {
         name: "Elite Career",
+        id: "seeker-elite",
         price: "39",
         description: "Full-scale white-glove career advancement suite.",
         features: [
@@ -74,7 +70,8 @@ export default function Pricing() {
     recruiter: [
       {
         name: "Growth Engine",
-        price: "49",
+        id: "recruiter-growth",
+        price: "0",
         description:
           "Perfect for fast-moving startups looking for initial hires.",
         features: [
@@ -91,7 +88,8 @@ export default function Pricing() {
       },
       {
         name: "Enterprise Loop",
-        price: "149",
+        id: "recruiter-enterprise",
+        price: "49",
         description:
           "Maximum outreach and high-volume corporate talent pipelines.",
         features: [
@@ -109,7 +107,8 @@ export default function Pricing() {
       },
       {
         name: "Global Scale",
-        price: "299",
+        id: "recruiter-global",
+        price: "149",
         description:
           "Custom agency infrastructure built for worldwide dominance.",
         features: [
@@ -304,20 +303,18 @@ export default function Pricing() {
 
                   {/* Purchase Intent Trigger CTA Buttons */}
                   <CardFooter className="pt-6 px-3">
-                    <Link
-                      href={"#"}
-                      variant="ghost"
-                      className="w-full font-bold shadow-none group transition-transform active:scale-[0.98] border p-2 rounded-full bg-violet-400 text-center"
-                      size="lg"
-                      endContent={
-                        <CircleChevronRight
-                          size={16}
-                          className="group-hover:translate-x-1 transition-transform"
-                        />
-                      }
-                    >
-                      {plan.buttonText}
-                    </Link>
+                    <form action="/api/checkout_sessions" method="POST">
+                      <input type="hidden" name="plan_id" value={plan.id} />
+                      <section>
+                        <button
+                          type="submit"
+                          role="link"
+                          className="w-full font-bold shadow-none group transition-transform active:scale-[0.98] border p-2 rounded-full bg-violet-500 text-center"
+                        >
+                          {plan.buttonText}
+                        </button>
+                      </section>
+                    </form>
                   </CardFooter>
                 </Card>
               </motion.div>
