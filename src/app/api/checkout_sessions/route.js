@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
 import { PLANS_PRICE_ID, stripe } from "../../../lib/stripe";
+import { loggedInUser } from "@/lib/core/session";
 
 export async function POST(request) {
   try {
@@ -12,8 +13,11 @@ export async function POST(request) {
     const planId = formData.get("plan_id");
     const priceId = PLANS_PRICE_ID[planId];
 
+    const user = await loggedInUser();
+
     // Create Checkout Sessions from body params.
     const session = await stripe.checkout.sessions.create({
+      customer_email: user?.email,
       line_items: [
         {
           // Provide the exact Price ID (for example, price_1234) of the product you want to sell
