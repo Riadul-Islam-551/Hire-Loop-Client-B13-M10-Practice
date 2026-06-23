@@ -109,7 +109,7 @@ const ApplyPage = async ({ params }) => {
 
             <Button
               color="warning"
-              className="w-full font-bold shadow-md bg-gradient-to-r from-amber-500 to-orange-500 text-white transition-transform active:scale-[0.98]"
+              className="w-full font-bold shadow-md bg-linear-to-r from-amber-500 to-orange-500 text-white transition-transform active:scale-[0.98]"
               size="lg"
             >
               <Link href={"/price"} className="w-full">
