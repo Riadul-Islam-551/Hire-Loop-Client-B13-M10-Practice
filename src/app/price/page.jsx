@@ -15,7 +15,7 @@ export default function Pricing() {
     seeker: [
       {
         name: "Starter Loop",
-        id: "seeker-free",
+        id: "seeker_free",
         price: "0",
         description: "Essential tools to kickstart your professional path.",
         features: [
@@ -32,7 +32,7 @@ export default function Pricing() {
       },
       {
         name: "Pro Hunter",
-        id: "seeker-pro",
+        id: "seeker_pro",
         price: "19",
         description: "Accelerate your hiring success with premium visibility.",
         features: [
@@ -50,7 +50,7 @@ export default function Pricing() {
       },
       {
         name: "Elite Career",
-        id: "seeker-elite",
+        id: "seeker_elite",
         price: "39",
         description: "Full-scale white-glove career advancement suite.",
         features: [
@@ -70,7 +70,7 @@ export default function Pricing() {
     recruiter: [
       {
         name: "Growth Engine",
-        id: "recruiter-growth",
+        id: "recruiter_growth",
         price: "0",
         description:
           "Perfect for fast-moving startups looking for initial hires.",
@@ -88,7 +88,7 @@ export default function Pricing() {
       },
       {
         name: "Enterprise Loop",
-        id: "recruiter-enterprise",
+        id: "recruiter_enterprise",
         price: "49",
         description:
           "Maximum outreach and high-volume corporate talent pipelines.",
@@ -107,7 +107,7 @@ export default function Pricing() {
       },
       {
         name: "Global Scale",
-        id: "recruiter-global",
+        id: "recruiter_global",
         price: "149",
         description:
           "Custom agency infrastructure built for worldwide dominance.",
