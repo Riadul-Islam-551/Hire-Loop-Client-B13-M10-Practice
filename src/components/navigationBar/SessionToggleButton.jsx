@@ -45,6 +45,7 @@ const SessionToggleButton = () => {
         <>
           <Link href="/signin">
             <Button variant="ghost">Sign in</Button>
+            <Button variant="outline">Get Started</Button>
           </Link>
         </>
       )}

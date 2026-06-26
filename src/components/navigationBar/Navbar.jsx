@@ -30,7 +30,7 @@ const Navbar = async () => {
           <Separator orientation="vertical" className=" hidden lg:block" />
           <div className="flex items-center lg:mr-4">
             <SessionToggleButton></SessionToggleButton>
-            <Button variant="outline">Get Started</Button>
+            
           </div>
           <div>
             <MenuToggleIcon />
