@@ -34,7 +34,7 @@ export async function SidebarMenu() {
       },
     ],
     seeker: [
-      { icon: House, href: "/dashboard/recruiter", label: "Dashboard" },
+      { icon: House, href: "/dashboard/seeker", label: "Dashboard" },
       { icon: Magnifier, href: "/dashboard/recruiter/job", label: "Jobs" },
       {
         icon: Bookmark,
