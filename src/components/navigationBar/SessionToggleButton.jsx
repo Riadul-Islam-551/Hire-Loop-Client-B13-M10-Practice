@@ -1,15 +1,12 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { Avatar, Button, Tooltip } from "@heroui/react";
+import { Avatar, Button } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
 
 const SessionToggleButton = () => {
-  const {
-    data: session,
-    isPending, //loading state
-  } = authClient.useSession();
+  const { data: session, isPending } = authClient.useSession();
 
   const user = session?.user;
   // console.log(user, isPending);
