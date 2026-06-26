@@ -35,7 +35,7 @@ export async function SidebarMenu() {
     ],
     seeker: [
       { icon: House, href: "/dashboard/seeker", label: "Dashboard" },
-      { icon: Magnifier, href: "/dashboard/recruiter/job", label: "Jobs" },
+      { icon: Magnifier, href: "/dashboard/seeker/job", label: "Jobs" },
       {
         icon: Bookmark,
         href: "/dashboard/recruiter/job/newJob",
@@ -43,7 +43,7 @@ export async function SidebarMenu() {
       },
       {
         icon: File,
-        href: "/dashboard/recruiter/company",
+        href: "/dashboard/seeker/applications",
         label: "Applications ",
       },
       {
@@ -94,7 +94,9 @@ export async function SidebarMenu() {
               <Drawer.CloseTrigger />
               <Drawer.Header>
                 <Drawer.Heading>WorkLio</Drawer.Heading>
-                <Drawer.Heading><SidebarUser></SidebarUser></Drawer.Heading>
+                <Drawer.Heading>
+                  <SidebarUser></SidebarUser>
+                </Drawer.Heading>
               </Drawer.Header>
               <Drawer.Body>{navSection}</Drawer.Body>
             </Drawer.Dialog>
