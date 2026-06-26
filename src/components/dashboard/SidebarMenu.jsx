@@ -83,7 +83,7 @@ export async function SidebarMenu() {
         {navSection}
       </aside>
       <Drawer className="flex-1">
-        <Button variant="secondary" className={"lg:hidden"}>
+        <Button variant="secondary" className="lg:hidden mt-5 ">
           <LayoutSideContentLeft className="" />
         </Button>
         <Drawer.Backdrop>
