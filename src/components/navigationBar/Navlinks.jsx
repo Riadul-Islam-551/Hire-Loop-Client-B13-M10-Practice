@@ -7,9 +7,8 @@ import { authClient } from "@/lib/auth-client";
 
 const Navlinks = () => {
   const pathName = usePathname();
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
   const userRole = session?.user?.role;
-  console.log(userRole);
   const userDashboard = {
     seeker: "/dashboard/seeker",
     recruiter: "/dashboard/recruiter",

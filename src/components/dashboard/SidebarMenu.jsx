@@ -1,28 +1,64 @@
+import { loggedInUser } from "@/lib/core/session";
 import {
   Bell,
   House,
   Magnifier,
   LayoutSideContentLeft,
   Briefcase,
+  Bookmark,
+  File,
+  FileDollar,
+  Gear,
 } from "@gravity-ui/icons";
 import { Button, Drawer } from "@heroui/react";
 import Link from "next/link";
 
-export function SidebarMenu() {
-  const navItems = [
-    { icon: House, href: "/dashboard/recruiter", label: "Dashboard" },
-    { icon: Magnifier, href: "/dashboard/recruiter/job", label: "Jobs" },
-    {
-      icon: Bell,
-      href: "/dashboard/recruiter/job/newJob",
-      label: "Post A Job",
-    },
-    {
-      icon: Briefcase,
-      href: "/dashboard/recruiter/company",
-      label: "Company Details",
-    },
-  ];
+export async function SidebarMenu() {
+  const user = await loggedInUser();
+  const role = user?.role;
+
+  const sidebarLinks = {
+    recruiter: [
+      { icon: House, href: "/dashboard/recruiter", label: "Dashboard" },
+      { icon: Magnifier, href: "/dashboard/recruiter/job", label: "Jobs" },
+      {
+        icon: Bell,
+        href: "/dashboard/recruiter/job/newJob",
+        label: "Post A Job",
+      },
+      {
+        icon: Briefcase,
+        href: "/dashboard/recruiter/company",
+        label: "Company Details",
+      },
+    ],
+    seeker: [
+      { icon: House, href: "/dashboard/recruiter", label: "Dashboard" },
+      { icon: Magnifier, href: "/dashboard/recruiter/job", label: "Jobs" },
+      {
+        icon: Bookmark,
+        href: "/dashboard/recruiter/job/newJob",
+        label: "Save Jobs",
+      },
+      {
+        icon: File,
+        href: "/dashboard/recruiter/company",
+        label: "Applications ",
+      },
+      {
+        icon: FileDollar,
+        href: "/dashboard/recruiter/company",
+        label: "Billing ",
+      },
+      {
+        icon: Gear,
+        href: "/dashboard/recruiter/company",
+        label: "Settings ",
+      },
+    ],
+  };
+
+  const navItems = sidebarLinks[role];
 
   const navSection = (
     <nav className="flex flex-col gap-1">
