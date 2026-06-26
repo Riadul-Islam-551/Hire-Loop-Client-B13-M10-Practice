@@ -9,6 +9,9 @@ import {
   File,
   FileDollar,
   Gear,
+  Persons,
+  LayoutCellsLarge,
+  ChartLineArrowUp,
 } from "@gravity-ui/icons";
 import { Button, Drawer } from "@heroui/react";
 import Link from "next/link";
@@ -35,10 +38,10 @@ export async function SidebarMenu() {
     ],
     seeker: [
       { icon: House, href: "/dashboard/seeker", label: "Dashboard" },
-      { icon: Magnifier, href: "/dashboard/seeker/", label: "Jobs" },
+      { icon: Magnifier, href: "/dashboard/seeker/jobs", label: "Jobs" },
       {
         icon: Bookmark,
-        href: "/dashboard/seeker/",
+        href: "/dashboard/seeker/saveJobs",
         label: "Save Jobs",
       },
       {
@@ -48,13 +51,45 @@ export async function SidebarMenu() {
       },
       {
         icon: FileDollar,
-        href: "/dashboard/recruiter/company",
+        href: "/dashboard/seeker/belling",
         label: "Billing ",
       },
       {
         icon: Gear,
-        href: "/dashboard/recruiter/company",
+        href: "/dashboard/seeker/settings",
         label: "Settings ",
+      },
+    ],
+    admin: [
+      {
+        icon: House,
+        href: "/dashboard/admin",
+        label: "Dashboard",
+      },
+      {
+        icon: Persons,
+        href: "/dashboard/admin/users",
+        label: "Manage Users",
+      },
+      {
+        icon: LayoutCellsLarge,
+        href: "/dashboard/admin/companies",
+        label: "Companies",
+      },
+      {
+        icon: Briefcase,
+        href: "/dashboard/admin/jobs",
+        label: "All Jobs",
+      },
+      {
+        icon: ChartLineArrowUp,
+        href: "/dashboard/admin/transactions",
+        label: "Transactions",
+      },
+      {
+        icon: Gear,
+        href: "/dashboard/admin/settings",
+        label: "Settings",
       },
     ],
   };

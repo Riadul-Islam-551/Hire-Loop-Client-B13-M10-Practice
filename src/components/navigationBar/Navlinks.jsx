@@ -12,6 +12,7 @@ const Navlinks = () => {
   const userDashboard = {
     seeker: "/dashboard/seeker",
     recruiter: "/dashboard/recruiter",
+    admin: "/dashboard/admin"
   };
   return (
     <div>
