@@ -12,6 +12,10 @@ export const loggedInUser = async () => {
 
 export const checkUserRole = async (role) => {
   const user = await loggedInUser();
+  if (!user) {
+    redirect("/signin");
+  }
+
   if (user?.role !== role) {
     redirect("/unauthorized");
   }

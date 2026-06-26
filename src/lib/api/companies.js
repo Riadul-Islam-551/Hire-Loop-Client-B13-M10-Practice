@@ -6,3 +6,8 @@ export const getLoggedInRecruiterCompany = async () => {
   // console.log(recruiter)
   return serverFetch(`/api/my/companies?recruiterId=${recruiter?.id}`);
 };
+
+// get company for job application
+export const getCompanyForJobApplications = async (id) => {
+  return serverFetch(`/api/companies?companyId=${id}`);
+};
