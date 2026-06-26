@@ -15,7 +15,7 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { redirect, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const RegistrationPage = () => {
   const searchParams = useSearchParams();
@@ -29,6 +29,7 @@ const RegistrationPage = () => {
     const user = Object.fromEntries(formData.entries());
 
     console.log(user);
+    const plan = user.role === "seeker" ? "seeker_free" : "recruiter_growth";
 
     const { data, error } = await authClient.signUp.email({
       email: user.email,
@@ -36,6 +37,7 @@ const RegistrationPage = () => {
       name: user.name,
       image: user.image,
       role: user.role,
+      plan,
     });
 
     if (data) {

@@ -7,6 +7,7 @@ import { getApplicationByApplicantId } from "@/lib/api/applications";
 import { Card, Button, Chip, ProgressBar } from "@heroui/react";
 import { ShieldExclamation, CrownDiamond, Briefcase } from "@gravity-ui/icons";
 import Link from "next/link";
+import { getPlanByUserPlan } from "@/lib/api/plans";
 
 const ApplyPage = async ({ params }) => {
   const { id } = await params;
@@ -52,21 +53,18 @@ const ApplyPage = async ({ params }) => {
     );
   }
 
-  const plans = {
-    name: "free",
-    maxApplicationPerMonth: 3,
-  };
+  const plan = await getPlanByUserPlan(user?.plan || "seeker_free");
 
   const jobDetails = await getJobById(id);
   const applicationDetails = await getApplicationByApplicantId(user?.id);
   const usedApplications = applicationDetails?.length || 0;
   const applicationsRemaining = Math.max(
     0,
-    plans.maxApplicationPerMonth - usedApplications,
+    plan.maxApplicationPerMonth - usedApplications,
   );
 
   // Fallback View 2: Reached application limits
-  if (usedApplications >= plans.maxApplicationPerMonth) {
+  if (usedApplications >= plan.maxApplicationPerMonth) {
     return (
       <div className="mt-30 min-h-[85vh] w-full flex justify-center items-center px-4 py-12">
         <Card className="max-w-xl w-full border-small border-default-100 shadow-2xl bg-content1/50 backdrop-blur-md relative overflow-hidden">
@@ -82,7 +80,7 @@ const ApplyPage = async ({ params }) => {
               <p className="text-sm text-default-500 leading-relaxed">
                 You have deployed all{" "}
                 <span className="font-semibold text-warning">
-                  {plans.maxApplicationPerMonth} available
+                  {plan.maxApplicationPerMonth} available
                 </span>{" "}
                 monthly application tokens under your current Tier.
               </p>
@@ -143,7 +141,7 @@ const ApplyPage = async ({ params }) => {
                   variant="flat"
                   className="font-semibold text-[10px] capitalize px-1"
                 >
-                  {plans.name} plan
+                  {plan.name} plan
                 </Chip>
               </span>
               <h1 className="text-xl font-bold text-default-800 mt-0.5">
@@ -162,13 +160,13 @@ const ApplyPage = async ({ params }) => {
                 Monthly Usage
               </span>
               <span className="text-default-700 font-bold">
-                {usedApplications} / {plans.maxApplicationPerMonth} Used
+                {usedApplications} / {plan.maxApplicationPerMonth} Used
               </span>
             </span>
             <ProgressBar
               aria-label="Application allowance indicator"
               size="sm"
-              value={(usedApplications / plans.maxApplicationPerMonth) * 100}
+              value={(usedApplications / plan.maxApplicationPerMonth) * 100}
               color={applicationsRemaining === 1 ? "warning" : "primary"}
               className="max-w-md"
             />

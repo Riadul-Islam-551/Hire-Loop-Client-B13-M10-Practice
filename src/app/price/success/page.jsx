@@ -2,6 +2,7 @@ import { stripe } from "@/lib/stripe";
 import { redirect } from "next/navigation";
 import { CircleCheckFill, Envelope } from "@gravity-ui/icons";
 import Link from "next/link";
+import { submitSubscriptionsData } from "@/lib/actions/subscriptions";
 
 export default async function Success({ searchParams }) {
   const { session_id } = await searchParams;
@@ -12,6 +13,7 @@ export default async function Success({ searchParams }) {
   const {
     status,
     customer_details: { email: customerEmail },
+    metadata,
   } = await stripe.checkout.sessions.retrieve(session_id, {
     expand: ["line_items", "payment_intent"],
   });
@@ -21,6 +23,14 @@ export default async function Success({ searchParams }) {
   }
 
   if (status === "complete") {
+    const subscriberInfo = {
+      email: customerEmail,
+      planId: metadata.planId,
+    };
+
+    const result = await submitSubscriptionsData(subscriberInfo);
+    console.log(result);
+
     return (
       <section
         id="success"
