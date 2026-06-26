@@ -35,10 +35,10 @@ export async function SidebarMenu() {
     ],
     seeker: [
       { icon: House, href: "/dashboard/seeker", label: "Dashboard" },
-      { icon: Magnifier, href: "/dashboard/seeker/job", label: "Jobs" },
+      { icon: Magnifier, href: "/dashboard/seeker/", label: "Jobs" },
       {
         icon: Bookmark,
-        href: "/dashboard/recruiter/job/newJob",
+        href: "/dashboard/seeker/",
         label: "Save Jobs",
       },
       {
