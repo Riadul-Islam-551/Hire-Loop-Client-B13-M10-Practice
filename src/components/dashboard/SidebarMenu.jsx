@@ -12,6 +12,7 @@ import {
 } from "@gravity-ui/icons";
 import { Button, Drawer } from "@heroui/react";
 import Link from "next/link";
+import SidebarUser from "./SidebarUser";
 
 export async function SidebarMenu() {
   const user = await loggedInUser();
@@ -80,6 +81,7 @@ export async function SidebarMenu() {
     <>
       <aside className="hidden lg:block w-64  border-r border-zinc-300 dark:border-zinc-700 ">
         <h1 className="font-bold text-2xl m-4  ">WorkLio</h1>
+        <SidebarUser></SidebarUser>
         {navSection}
       </aside>
       <Drawer className="flex-1">
@@ -92,6 +94,7 @@ export async function SidebarMenu() {
               <Drawer.CloseTrigger />
               <Drawer.Header>
                 <Drawer.Heading>WorkLio</Drawer.Heading>
+                <Drawer.Heading><SidebarUser></SidebarUser></Drawer.Heading>
               </Drawer.Header>
               <Drawer.Body>{navSection}</Drawer.Body>
             </Drawer.Dialog>

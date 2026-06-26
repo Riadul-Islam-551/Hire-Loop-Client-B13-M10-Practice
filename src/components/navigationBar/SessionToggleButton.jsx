@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const SessionToggleButton = () => {
@@ -15,7 +16,8 @@ const SessionToggleButton = () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          window.location.reload(); // redirect to login page
+          // window.location.reload();
+          redirect("/signin");
         },
       },
     });
